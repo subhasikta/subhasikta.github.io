@@ -1,0 +1,22 @@
+{
+  "name": "subhasikta.github.io",
+  "version": "1.0.0",
+  "description": "Start myFirstProject",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass scss/index.scss css/index.css -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subhasikta/subhasikta.github.io.git"
+  },
+  "author": "Subhasikta Behera",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/subhasikta/subhasikta.github.io/issues"
+  },
+  "homepage": "https://github.com/subhasikta/subhasikta.github.io#readme",
+  "dependencies": {
+    "node-sass": "^4.13.1"
+  }
+}
