@@ -1,0 +1,802 @@
+@import "mixin";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.header {
+  position: relative;
+  height: 600px;
+  @include layout(1023) {
+    height: 540px;
+  }
+  @include layout(767) {
+    height: 440px;
+  }
+}
+
+.page-header-container {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 64px;
+  left: 0;
+  top: 0;
+  @include layout(767) {
+    height: 55px;
+  }
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 21px 35px;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: transparent;
+  @include layout(767) {
+    padding: 19px;
+  }
+}
+
+.header-bg {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.17), 0 2px 10px 0 rgba(0, 0, 0, 0.13);
+  background-color: #fff !important;
+  .logo-name,
+  a {
+    color: #1e4d92 !important;
+  }
+  svg {
+    fill: #1e4d92 !important;
+  }
+}
+
+.left-wrap {
+  .logo-title-block {
+    display: flex;
+    img {
+      width: 58px;
+    }
+    .logo-name {
+      font-family: "Montserrat";
+      font-weight: 600;
+      text-transform: capitalize;
+      font-size: 14px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+nav {
+  @include layout(767) {
+    display: none;
+  }
+}
+
+.right-wrap {
+  .nav-items {
+    list-style-type: none;
+    display: flex;
+    margin: 0 auto;
+    padding: 0;
+    .nav-link {
+      margin: 0px 16px;
+      @include layout(1023) {
+        margin: 0px 11px;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      cursor: pointer;
+      a {
+        font-family: "Montserrat";
+        font-size: 15px;
+        font-weight: 600;
+        color: #fff;
+        text-transform: capitalize;
+        text-decoration: none;
+        &::after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 3px;
+          background: #03bea2;
+          transition: width 0.3s;
+        }
+        &:hover::after {
+          width: 100%;
+          transition: width 0.3s;
+        }
+      }
+    }
+  }
+}
+
+.main {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.profile-image-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: linear-gradient(57deg, #00c6a7, #1e4d92);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 74%, 0% 100%);
+  @include layout(1023) {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
+  }
+}
+
+.profile-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0 15px;
+  color: #ffffff;
+  width: 100%;
+  min-height: 340px;
+  @include layout(767) {
+    max-width: 255px;
+    min-height: 280px;
+    padding: 0 8px;
+  }
+  .heading {
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 28px;
+    @include layout(1023) {
+      font-size: 34px;
+    }
+    @include layout(767) {
+      font-size: 24px;
+    }
+  }
+  .designation {
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    padding-top: 7px;
+    text-transform: uppercase;
+    @include layout(1023) {
+      font-size: 18px;
+    }
+    @include layout(767) {
+      font-size: 14px;
+      padding-top: 0;
+    }
+  }
+  .download-btn {
+    width: 142px;
+    margin: 0 auto;
+    margin-top: 30px;
+    @include layout(767) {
+      margin-top: 20px;
+      width: 125px;
+    }
+    a {
+      margin: 20px auto;
+      text-decoration: none;
+      border-width: 2px;
+      font-weight: 600;
+      font-size: 14px;
+      font-family: "Montserrat";
+      border: 1px solid #fff;
+      border-radius: 5px;
+      padding: 11px 20px;
+      background: #fff;
+      color: #1e4d92;
+      cursor: pointer;
+      @include layout(767) {
+        margin: 12px auto;
+        padding: 11px 15px;
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes pulsate {
+  0% {
+    transform: scale(0.6, 0.6);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+}
+@keyframes pulsate {
+  0% {
+    transform: scale(0.6, 0.6);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1, 1);
+    opacity: 0;
+  }
+}
+
+.profile-image {
+  a {
+    position: relative;
+    &::before {
+      content: "";
+      border: 15px solid #03bea2;
+      border-radius: 50%;
+      height: 150px;
+      width: 150px;
+      position: absolute;
+      left: 0;
+      animation: pulsate 1.6s ease-out;
+      animation-iteration-count: infinite;
+      opacity: 0;
+      z-index: 99;
+      @include layout(767) {
+        height: 110px;
+        width: 110px;
+      }
+    }
+    &:hover::before {
+      animation: none;
+    }
+    img {
+      position: relative;
+      border-radius: 50%;
+      height: 180px;
+      width: 180px;
+      padding: 0;
+      margin: 0;
+      border: 15px solid transparent;
+      z-index: 9999;
+      transition: all 0.3s ease-out;
+      @include layout(767) {
+        border: 10px solid transparent;
+        width: 140px;
+        height: 140px;
+      }
+      &:hover {
+        transform: scale(1.06, 1.06);
+      }
+    }
+  }
+}
+
+.sections {
+  margin: 0 140px 60px 140px;
+  width: auto;
+  @include layout(1200) {
+    margin: 20px 90px 40px 90px;
+  }
+  @include layout(1023) {
+    margin: 40px 70px 30px 70px;
+  }
+  @include layout(767) {
+    margin: 40px 50px;
+  }
+  @include layout(410) {
+    margin: 40px 25px;
+  }
+  .about-section-container,
+  .proffesional-skills-container,
+  .education-container,
+  .experience-container {
+    h1,
+    .content,
+    .title-value,
+    .html-value-text {
+      font-family: "Montserrat";
+      font-size: 28px;
+      @include layout(1200) {
+        font-size: 26px;
+      }
+      @include layout(1023) {
+        font-size: 24px;
+      }
+      @include layout(767) {
+        font-size: 22px;
+      }
+    }
+    .content,
+    .title-value,
+    .html-value-text {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .content {
+      .title,
+      .title-value {
+        @include layout(767) {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+  .about-section-container,
+  .proffesional-skills-block {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1140px;
+    width: 100%;
+    padding: 25px;
+    border-radius: 6px;
+    transition: all 0.5s ease-out;
+    margin: 0 auto;
+    @include layout(1200) {
+      padding: 0px 5px;
+    }
+    @include layout(767) {
+      padding: 0;
+    }
+    @include layout(767) {
+      flex-direction: column;
+    }
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 2px 1px 4px 0px rgba(0, 0, 0, 0.2);
+      transition: all 0.5s ease-out;
+      cursor: pointer;
+      @include layout(1023) {
+        transform: none;
+        box-shadow: none;
+        transition: none;
+        cursor: auto;
+      }
+    }
+  }
+  .about-block,
+  .basic-info-block {
+    max-width: 48%;
+    width: 100%;
+    @include layout(767) {
+      max-width: 100%;
+    }
+    .para-1 {
+      padding-bottom: 12px;
+    }
+    h1 {
+      @include layout(767) {
+        margin: 0;
+        padding-bottom: 20px;
+      }
+    }
+    .content {
+      @include layout(767) {
+        padding-bottom: 45px;
+      }
+    }
+  }
+  .basic-info-block {
+    .content {
+      padding-bottom: 7px;
+      display: flex;
+      .title {
+        font-family: "Montserrat";
+        text-transform: uppercase;
+        max-width: 95px;
+        width: 100%;
+      }
+      .title-value {
+        padding-left: 20px;
+        @include layout(767) {
+          padding-left: 4px;
+        }
+      }
+    }
+  }
+  .proffesional-skills-container,
+  .experience-container {
+    margin: 80px auto 60px auto;
+    @include layout(767) {
+      margin: 50px auto;
+      h1 {
+        margin: 0;
+      }
+    }
+    .proffesional-skills-block {
+      width: 100%;
+      flex-wrap: wrap;
+      flex-direction: row;
+      @include layout(767) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+      }
+      .skill-block {
+        max-width: 48%;
+        width: 100%;
+        margin: auto;
+        margin-bottom: 20px !important;
+        @include layout(1023) {
+          margin: 0;
+        }
+        @include layout(767) {
+          max-width: 90%;
+        }
+      }
+    }
+    .html-value-text {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 7px;
+      span {
+        font-size: 18px;
+        color: #1e4d92;
+        text-transform: uppercase;
+        @include layout(1023) {
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+.proffesional-skills-container,
+.education-container,
+.experience-container {
+  h1 {
+    font-size: 28px;
+    text-align: center;
+    padding: 8px 0px;
+  }
+}
+
+.progress {
+  width: 100%;
+  height: 5px;
+  background-color: #c6d2e6;
+  border-radius: 10px;
+  position: relative;
+  .aos-animate {
+    transform: scaleX(1);
+  }
+}
+.progress-bar {
+  height: 100%;
+  transform: scaleX(0);
+  transition: transform 3s ease-in-out;
+  transition: transform 3s ease-in-out;
+  transform-origin: 0% 0%;
+  background: linear-gradient(57deg, #00c6a7, #1e4d92);
+}
+.html-progress .progress-bar {
+  width: 80%;
+}
+.c-progress .progress-bar {
+  width: 80%;
+}
+.bootstrap-progress .progress-bar {
+  width: 60%;
+}
+.javascript-progress .progress-bar {
+  width: 65%;
+}
+.css-progress .progress-bar {
+  width: 75%;
+}
+.sass-progress .progress-bar {
+  width: 65%;
+}
+
+.education-container,
+.experience-container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  ul {
+    list-style-type: none;
+    margin: 0 auto;
+    display: flex;
+    padding: 0;
+    justify-content: center;
+    @include layout(1023) {
+      display: block;
+      margin-top: 30px;
+    }
+    li {
+      max-width: 33%;
+      width: 100%;
+      justify-content: space-around;
+      padding-right: 30px;
+      @include layout(1240) {
+        padding-right: 15px;
+      }
+      @include layout(1023) {
+        display: flex;
+        justify-content: space-between;
+        max-width: 100%;
+        padding: 0px 0px 50px 0px;
+      }
+      &:last-child {
+        padding-right: 0 !important;
+      }
+      .time-title-branch-block {
+        @include layout(1023) {
+          max-width: 46%;
+          width: 100%;
+        }
+        .time,
+        .title,
+        .branch {
+          font-family: "Montserrat";
+          font-size: 14px;
+          padding-bottom: 5px;
+          @include layout(1023) {
+            text-align: right;
+          }
+          @include layout(767) {
+            font-size: 13px;
+          }
+        }
+      }
+      .collage-details-block {
+        max-width: 270px;
+        @include layout(1023) {
+          max-width: 46%;
+          width: 100%;
+        }
+        .collage-name {
+          font-family: "Montserrat";
+          padding-bottom: 5px;
+          font-size: 14px;
+          @include layout(767) {
+            font-size: 13px;
+          }
+        }
+      }
+      .spin {
+        position: relative;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #1e4d92;
+        margin: 15px 0px;
+        padding-top: 2px;
+        cursor: pointer;
+        @include layout(1023) {
+          margin: 0px;
+        }
+        &:hover {
+          animation: pulsate 1.6s ease-out;
+          animation-iteration-count: infinite;
+        }
+        &::after {
+          content: "";
+          width: 361px;
+          height: 1px;
+          background: linear-gradient(75deg, #00c6a7, #1e4d92);
+          position: absolute;
+          top: 50%;
+          left: 9px;
+          @include layout(1350) {
+            width: 340px;
+          }
+          @include layout(1290) {
+            width: 320px;
+          }
+          @include layout(1240) {
+            width: 295px;
+          }
+          @include layout(1100) {
+            width: 291px;
+          }
+          @include layout(1065) {
+            width: 280px;
+          }
+          @include layout(1023) {
+            width: 1px;
+            height: 105px;
+            top: 8px;
+            left: 2px;
+          }
+          @include layout(767) {
+            height: 120px;
+          }
+          @include layout(440) {
+            height: 135px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.education-container {
+  max-width: 1130px;
+  @include layout(1240) {
+    max-width: 930px;
+  }
+  @include layout(1023) {
+    max-width: 660px;
+  }
+}
+
+.experience-container {
+  margin: 0px auto 60px auto !important;
+  .experience-block {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 5px !important;
+    box-shadow: 2px 1px 4px 0px rgba(0, 0, 0, 0.2);
+    @include layout(767) {
+      display: block;
+      margin-top: 25px;
+    }
+    .job-title {
+      max-width: 32%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      background-color: rgb(30, 77, 146);
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+      padding: 25px;
+      @include layout(1023) {
+        max-width: 36%;
+      }
+      @include layout(767) {
+        max-width: 100%;
+        border-bottom-left-radius: 0;
+        border-top-right-radius: 5px;
+        padding: 27px 15px;
+      }
+      .experience-time,
+      .title {
+        font-family: "Montserrat";
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+        @include layout(767) {
+          font-size: 14px;
+        }
+      }
+      .title {
+        font-size: 24px;
+        font-weight: 600;
+        padding-top: 7px;
+        @include layout(767) {
+          font-size: 18px;
+          padding-top: 5px;
+        }
+      }
+    }
+    .job-description {
+      max-width: 75%;
+      width: 100%;
+      display: flex;
+      padding: 30px;
+      align-items: center;
+      @include layout(767) {
+        max-width: 100%;
+        padding: 14px;
+      }
+      div {
+        font-family: "Montserrat";
+        font-size: 14px;
+        word-spacing: 1px;
+        line-height: 1.7;
+      }
+    }
+  }
+}
+
+footer {
+  position: relative;
+  height: 300px;
+  @include layout(1023) {
+    height: 250px;
+  }
+  .contact-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(57deg, #00c6a7, #1e4d92);
+    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, -75% 100%);
+    @include layout(1023) {
+      clip-path: polygon(100% 0%, 100% 0%, 100% 100%, -75% 100%);
+    }
+  }
+}
+
+.navigation-menu-icon-show {
+  display: none;
+  height: 18px;
+  @include layout(767) {
+    display: block;
+  }
+  svg {
+    width: 21px;
+    fill: #fff;
+    z-index: 10 !important;
+  }
+}
+
+.mobile-navigation-menu-close {
+  display: none;
+  max-width: 0;
+  width: 0;
+  transition: width 0.4s ease-out;
+  transform: translateX(100%);
+}
+
+.mobile-navigation-menu-open {
+  display: none;
+  @include layout(767) {
+    display: block !important;
+    position: fixed;
+    max-width: 280px;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(57deg, #00c6a7, #1e4d92);
+    top: 0;
+    right: 0;
+    z-index: 10;
+    overflow: auto;
+    box-shadow: -13px 0 40px 0 rgba(0,0,0,.3);
+    transform: translateX(0%);
+    transition: 0.6s;
+    // animation: menu-anim-right 0.8s ease-in 1;
+  }
+  .close-menu-icon {
+    display: flex;
+    justify-content: flex-end;
+    @include layout(767) {
+      padding: 19px;
+    }
+    img {
+      width: 18px;
+    }
+  }
+  nav {
+    margin: 30px 60px;
+    display: flex;
+    justify-content: center;
+  }
+  .right-wrap {
+    display: block;
+    .nav-items {
+      display: block;
+      .nav-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        a {
+          text-align: center;
+          color: #fff;
+          margin: 10px;
+        }
+      }
+    }
+  }
+}

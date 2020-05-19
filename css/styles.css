@@ -1,0 +1,814 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto; }
+
+.header {
+  position: relative;
+  height: 600px; }
+  @media (max-width: 1023px) {
+    .header {
+      height: 540px; } }
+  @media (max-width: 767px) {
+    .header {
+      height: 440px; } }
+
+.page-header-container {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  height: 64px;
+  left: 0;
+  top: 0; }
+  @media (max-width: 767px) {
+    .page-header-container {
+      height: 55px; } }
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 21px 35px;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: transparent; }
+  @media (max-width: 767px) {
+    .page-header {
+      padding: 19px; } }
+
+.header-bg {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.17), 0 2px 10px 0 rgba(0, 0, 0, 0.13);
+  background-color: #fff !important; }
+  .header-bg .logo-name,
+  .header-bg a {
+    color: #1e4d92 !important; }
+  .header-bg svg {
+    fill: #1e4d92 !important; }
+
+.left-wrap .logo-title-block {
+  display: flex; }
+  .left-wrap .logo-title-block img {
+    width: 58px; }
+  .left-wrap .logo-title-block .logo-name {
+    font-family: "Montserrat";
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    align-items: center; }
+
+@media (max-width: 767px) {
+  nav {
+    display: none; } }
+
+.right-wrap .nav-items {
+  list-style-type: none;
+  display: flex;
+  margin: 0 auto;
+  padding: 0; }
+  .right-wrap .nav-items .nav-link {
+    margin: 0px 16px;
+    cursor: pointer; }
+    @media (max-width: 1023px) {
+      .right-wrap .nav-items .nav-link {
+        margin: 0px 11px; } }
+    .right-wrap .nav-items .nav-link:last-child {
+      margin-right: 0; }
+    .right-wrap .nav-items .nav-link a {
+      font-family: "Montserrat";
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+      text-transform: capitalize;
+      text-decoration: none; }
+      .right-wrap .nav-items .nav-link a::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 3px;
+        background: #03bea2;
+        transition: width 0.3s; }
+      .right-wrap .nav-items .nav-link a:hover::after {
+        width: 100%;
+        transition: width 0.3s; }
+
+.main {
+  width: 100%;
+  margin: 0 auto; }
+
+.profile-image-container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: linear-gradient(57deg, #00c6a7, #1e4d92);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 74%, 0% 100%); }
+  @media (max-width: 1023px) {
+    .profile-image-container {
+      clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%); } }
+
+.profile-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0 15px;
+  color: #ffffff;
+  width: 100%;
+  min-height: 340px; }
+  @media (max-width: 767px) {
+    .profile-container {
+      max-width: 255px;
+      min-height: 280px;
+      padding: 0 8px; } }
+  .profile-container .heading {
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 28px; }
+    @media (max-width: 1023px) {
+      .profile-container .heading {
+        font-size: 34px; } }
+    @media (max-width: 767px) {
+      .profile-container .heading {
+        font-size: 24px; } }
+  .profile-container .designation {
+    font-family: "Montserrat";
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    padding-top: 7px;
+    text-transform: uppercase; }
+    @media (max-width: 1023px) {
+      .profile-container .designation {
+        font-size: 18px; } }
+    @media (max-width: 767px) {
+      .profile-container .designation {
+        font-size: 14px;
+        padding-top: 0; } }
+  .profile-container .download-btn {
+    width: 142px;
+    margin: 0 auto;
+    margin-top: 30px; }
+    @media (max-width: 767px) {
+      .profile-container .download-btn {
+        margin-top: 20px;
+        width: 125px; } }
+    .profile-container .download-btn a {
+      margin: 20px auto;
+      text-decoration: none;
+      border-width: 2px;
+      font-weight: 600;
+      font-size: 14px;
+      font-family: "Montserrat";
+      border: 1px solid #fff;
+      border-radius: 5px;
+      padding: 11px 20px;
+      background: #fff;
+      color: #1e4d92;
+      cursor: pointer; }
+      @media (max-width: 767px) {
+        .profile-container .download-btn a {
+          margin: 12px auto;
+          padding: 11px 15px;
+          font-size: 13px; } }
+
+@-webkit-keyframes pulsate {
+  0% {
+    transform: scale(0.6, 0.6);
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    transform: scale(1, 1);
+    opacity: 0; } }
+
+@keyframes pulsate {
+  0% {
+    transform: scale(0.6, 0.6);
+    opacity: 0; }
+  50% {
+    opacity: 1; }
+  100% {
+    transform: scale(1, 1);
+    opacity: 0; } }
+
+.profile-image a {
+  position: relative; }
+  .profile-image a::before {
+    content: "";
+    border: 15px solid #03bea2;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    left: 0;
+    animation: pulsate 1.6s ease-out;
+    animation-iteration-count: infinite;
+    opacity: 0;
+    z-index: 99; }
+    @media (max-width: 767px) {
+      .profile-image a::before {
+        height: 110px;
+        width: 110px; } }
+  .profile-image a:hover::before {
+    animation: none; }
+  .profile-image a img {
+    position: relative;
+    border-radius: 50%;
+    height: 180px;
+    width: 180px;
+    padding: 0;
+    margin: 0;
+    border: 15px solid transparent;
+    z-index: 9999;
+    transition: all 0.3s ease-out; }
+    @media (max-width: 767px) {
+      .profile-image a img {
+        border: 10px solid transparent;
+        width: 140px;
+        height: 140px; } }
+    .profile-image a img:hover {
+      transform: scale(1.06, 1.06); }
+
+.sections {
+  margin: 0 140px 60px 140px;
+  width: auto; }
+  @media (max-width: 1200px) {
+    .sections {
+      margin: 20px 90px 40px 90px; } }
+  @media (max-width: 1023px) {
+    .sections {
+      margin: 40px 70px 30px 70px; } }
+  @media (max-width: 767px) {
+    .sections {
+      margin: 40px 50px; } }
+  @media (max-width: 410px) {
+    .sections {
+      margin: 40px 25px; } }
+  .sections .about-section-container h1,
+  .sections .about-section-container .content,
+  .sections .about-section-container .title-value,
+  .sections .about-section-container .html-value-text,
+  .sections .proffesional-skills-container h1,
+  .sections .proffesional-skills-container .content,
+  .sections .proffesional-skills-container .title-value,
+  .sections .proffesional-skills-container .html-value-text,
+  .sections .education-container h1,
+  .sections .education-container .content,
+  .sections .education-container .title-value,
+  .sections .education-container .html-value-text,
+  .sections .experience-container h1,
+  .sections .experience-container .content,
+  .sections .experience-container .title-value,
+  .sections .experience-container .html-value-text {
+    font-family: "Montserrat";
+    font-size: 28px; }
+    @media (max-width: 1200px) {
+      .sections .about-section-container h1,
+      .sections .about-section-container .content,
+      .sections .about-section-container .title-value,
+      .sections .about-section-container .html-value-text,
+      .sections .proffesional-skills-container h1,
+      .sections .proffesional-skills-container .content,
+      .sections .proffesional-skills-container .title-value,
+      .sections .proffesional-skills-container .html-value-text,
+      .sections .education-container h1,
+      .sections .education-container .content,
+      .sections .education-container .title-value,
+      .sections .education-container .html-value-text,
+      .sections .experience-container h1,
+      .sections .experience-container .content,
+      .sections .experience-container .title-value,
+      .sections .experience-container .html-value-text {
+        font-size: 26px; } }
+    @media (max-width: 1023px) {
+      .sections .about-section-container h1,
+      .sections .about-section-container .content,
+      .sections .about-section-container .title-value,
+      .sections .about-section-container .html-value-text,
+      .sections .proffesional-skills-container h1,
+      .sections .proffesional-skills-container .content,
+      .sections .proffesional-skills-container .title-value,
+      .sections .proffesional-skills-container .html-value-text,
+      .sections .education-container h1,
+      .sections .education-container .content,
+      .sections .education-container .title-value,
+      .sections .education-container .html-value-text,
+      .sections .experience-container h1,
+      .sections .experience-container .content,
+      .sections .experience-container .title-value,
+      .sections .experience-container .html-value-text {
+        font-size: 24px; } }
+    @media (max-width: 767px) {
+      .sections .about-section-container h1,
+      .sections .about-section-container .content,
+      .sections .about-section-container .title-value,
+      .sections .about-section-container .html-value-text,
+      .sections .proffesional-skills-container h1,
+      .sections .proffesional-skills-container .content,
+      .sections .proffesional-skills-container .title-value,
+      .sections .proffesional-skills-container .html-value-text,
+      .sections .education-container h1,
+      .sections .education-container .content,
+      .sections .education-container .title-value,
+      .sections .education-container .html-value-text,
+      .sections .experience-container h1,
+      .sections .experience-container .content,
+      .sections .experience-container .title-value,
+      .sections .experience-container .html-value-text {
+        font-size: 22px; } }
+  .sections .about-section-container .content,
+  .sections .about-section-container .title-value,
+  .sections .about-section-container .html-value-text,
+  .sections .proffesional-skills-container .content,
+  .sections .proffesional-skills-container .title-value,
+  .sections .proffesional-skills-container .html-value-text,
+  .sections .education-container .content,
+  .sections .education-container .title-value,
+  .sections .education-container .html-value-text,
+  .sections .experience-container .content,
+  .sections .experience-container .title-value,
+  .sections .experience-container .html-value-text {
+    font-size: 14px;
+    line-height: 1.5; }
+  @media (max-width: 767px) {
+    .sections .about-section-container .content .title,
+    .sections .about-section-container .content .title-value,
+    .sections .proffesional-skills-container .content .title,
+    .sections .proffesional-skills-container .content .title-value,
+    .sections .education-container .content .title,
+    .sections .education-container .content .title-value,
+    .sections .experience-container .content .title,
+    .sections .experience-container .content .title-value {
+      font-size: 13px; } }
+  .sections .about-section-container,
+  .sections .proffesional-skills-block {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1140px;
+    width: 100%;
+    padding: 25px;
+    border-radius: 6px;
+    transition: all 0.5s ease-out;
+    margin: 0 auto; }
+    @media (max-width: 1200px) {
+      .sections .about-section-container,
+      .sections .proffesional-skills-block {
+        padding: 0px 5px; } }
+    @media (max-width: 767px) {
+      .sections .about-section-container,
+      .sections .proffesional-skills-block {
+        padding: 0; } }
+    @media (max-width: 767px) {
+      .sections .about-section-container,
+      .sections .proffesional-skills-block {
+        flex-direction: column; } }
+    .sections .about-section-container:hover,
+    .sections .proffesional-skills-block:hover {
+      transform: scale(1.02);
+      box-shadow: 2px 1px 4px 0px rgba(0, 0, 0, 0.2);
+      transition: all 0.5s ease-out;
+      cursor: pointer; }
+      @media (max-width: 1023px) {
+        .sections .about-section-container:hover,
+        .sections .proffesional-skills-block:hover {
+          transform: none;
+          box-shadow: none;
+          transition: none;
+          cursor: auto; } }
+  .sections .about-block,
+  .sections .basic-info-block {
+    max-width: 48%;
+    width: 100%; }
+    @media (max-width: 767px) {
+      .sections .about-block,
+      .sections .basic-info-block {
+        max-width: 100%; } }
+    .sections .about-block .para-1,
+    .sections .basic-info-block .para-1 {
+      padding-bottom: 12px; }
+    @media (max-width: 767px) {
+      .sections .about-block h1,
+      .sections .basic-info-block h1 {
+        margin: 0;
+        padding-bottom: 20px; } }
+    @media (max-width: 767px) {
+      .sections .about-block .content,
+      .sections .basic-info-block .content {
+        padding-bottom: 45px; } }
+  .sections .basic-info-block .content {
+    padding-bottom: 7px;
+    display: flex; }
+    .sections .basic-info-block .content .title {
+      font-family: "Montserrat";
+      text-transform: uppercase;
+      max-width: 95px;
+      width: 100%; }
+    .sections .basic-info-block .content .title-value {
+      padding-left: 20px; }
+      @media (max-width: 767px) {
+        .sections .basic-info-block .content .title-value {
+          padding-left: 4px; } }
+  .sections .proffesional-skills-container,
+  .sections .experience-container {
+    margin: 80px auto 60px auto; }
+    @media (max-width: 767px) {
+      .sections .proffesional-skills-container,
+      .sections .experience-container {
+        margin: 50px auto; }
+        .sections .proffesional-skills-container h1,
+        .sections .experience-container h1 {
+          margin: 0; } }
+    .sections .proffesional-skills-container .proffesional-skills-block,
+    .sections .experience-container .proffesional-skills-block {
+      width: 100%;
+      flex-wrap: wrap;
+      flex-direction: row; }
+      @media (max-width: 767px) {
+        .sections .proffesional-skills-container .proffesional-skills-block,
+        .sections .experience-container .proffesional-skills-block {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-top: 30px; } }
+      .sections .proffesional-skills-container .proffesional-skills-block .skill-block,
+      .sections .experience-container .proffesional-skills-block .skill-block {
+        max-width: 48%;
+        width: 100%;
+        margin: auto;
+        margin-bottom: 20px !important; }
+        @media (max-width: 1023px) {
+          .sections .proffesional-skills-container .proffesional-skills-block .skill-block,
+          .sections .experience-container .proffesional-skills-block .skill-block {
+            margin: 0; } }
+        @media (max-width: 767px) {
+          .sections .proffesional-skills-container .proffesional-skills-block .skill-block,
+          .sections .experience-container .proffesional-skills-block .skill-block {
+            max-width: 90%; } }
+    .sections .proffesional-skills-container .html-value-text,
+    .sections .experience-container .html-value-text {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 7px; }
+      .sections .proffesional-skills-container .html-value-text span,
+      .sections .experience-container .html-value-text span {
+        font-size: 18px;
+        color: #1e4d92;
+        text-transform: uppercase; }
+        @media (max-width: 1023px) {
+          .sections .proffesional-skills-container .html-value-text span,
+          .sections .experience-container .html-value-text span {
+            font-size: 15px; } }
+
+.proffesional-skills-container h1,
+.education-container h1,
+.experience-container h1 {
+  font-size: 28px;
+  text-align: center;
+  padding: 8px 0px; }
+
+.progress {
+  width: 100%;
+  height: 5px;
+  background-color: #c6d2e6;
+  border-radius: 10px;
+  position: relative; }
+  .progress .aos-animate {
+    transform: scaleX(1); }
+
+.progress-bar {
+  height: 100%;
+  transform: scaleX(0);
+  transition: transform 3s ease-in-out;
+  transition: transform 3s ease-in-out;
+  transform-origin: 0% 0%;
+  background: linear-gradient(57deg, #00c6a7, #1e4d92); }
+
+.html-progress .progress-bar {
+  width: 80%; }
+
+.c-progress .progress-bar {
+  width: 80%; }
+
+.bootstrap-progress .progress-bar {
+  width: 60%; }
+
+.javascript-progress .progress-bar {
+  width: 65%; }
+
+.css-progress .progress-bar {
+  width: 75%; }
+
+.sass-progress .progress-bar {
+  width: 65%; }
+
+.education-container,
+.experience-container {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto; }
+  .education-container ul,
+  .experience-container ul {
+    list-style-type: none;
+    margin: 0 auto;
+    display: flex;
+    padding: 0;
+    justify-content: center; }
+    @media (max-width: 1023px) {
+      .education-container ul,
+      .experience-container ul {
+        display: block;
+        margin-top: 30px; } }
+    .education-container ul li,
+    .experience-container ul li {
+      max-width: 33%;
+      width: 100%;
+      justify-content: space-around;
+      padding-right: 30px; }
+      @media (max-width: 1240px) {
+        .education-container ul li,
+        .experience-container ul li {
+          padding-right: 15px; } }
+      @media (max-width: 1023px) {
+        .education-container ul li,
+        .experience-container ul li {
+          display: flex;
+          justify-content: space-between;
+          max-width: 100%;
+          padding: 0px 0px 50px 0px; } }
+      .education-container ul li:last-child,
+      .experience-container ul li:last-child {
+        padding-right: 0 !important; }
+      @media (max-width: 1023px) {
+        .education-container ul li .time-title-branch-block,
+        .experience-container ul li .time-title-branch-block {
+          max-width: 46%;
+          width: 100%; } }
+      .education-container ul li .time-title-branch-block .time,
+      .education-container ul li .time-title-branch-block .title,
+      .education-container ul li .time-title-branch-block .branch,
+      .experience-container ul li .time-title-branch-block .time,
+      .experience-container ul li .time-title-branch-block .title,
+      .experience-container ul li .time-title-branch-block .branch {
+        font-family: "Montserrat";
+        font-size: 14px;
+        padding-bottom: 5px; }
+        @media (max-width: 1023px) {
+          .education-container ul li .time-title-branch-block .time,
+          .education-container ul li .time-title-branch-block .title,
+          .education-container ul li .time-title-branch-block .branch,
+          .experience-container ul li .time-title-branch-block .time,
+          .experience-container ul li .time-title-branch-block .title,
+          .experience-container ul li .time-title-branch-block .branch {
+            text-align: right; } }
+        @media (max-width: 767px) {
+          .education-container ul li .time-title-branch-block .time,
+          .education-container ul li .time-title-branch-block .title,
+          .education-container ul li .time-title-branch-block .branch,
+          .experience-container ul li .time-title-branch-block .time,
+          .experience-container ul li .time-title-branch-block .title,
+          .experience-container ul li .time-title-branch-block .branch {
+            font-size: 13px; } }
+      .education-container ul li .collage-details-block,
+      .experience-container ul li .collage-details-block {
+        max-width: 270px; }
+        @media (max-width: 1023px) {
+          .education-container ul li .collage-details-block,
+          .experience-container ul li .collage-details-block {
+            max-width: 46%;
+            width: 100%; } }
+        .education-container ul li .collage-details-block .collage-name,
+        .experience-container ul li .collage-details-block .collage-name {
+          font-family: "Montserrat";
+          padding-bottom: 5px;
+          font-size: 14px; }
+          @media (max-width: 767px) {
+            .education-container ul li .collage-details-block .collage-name,
+            .experience-container ul li .collage-details-block .collage-name {
+              font-size: 13px; } }
+      .education-container ul li .spin,
+      .experience-container ul li .spin {
+        position: relative;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background-color: #1e4d92;
+        margin: 15px 0px;
+        padding-top: 2px;
+        cursor: pointer; }
+        @media (max-width: 1023px) {
+          .education-container ul li .spin,
+          .experience-container ul li .spin {
+            margin: 0px; } }
+        .education-container ul li .spin:hover,
+        .experience-container ul li .spin:hover {
+          animation: pulsate 1.6s ease-out;
+          animation-iteration-count: infinite; }
+        .education-container ul li .spin::after,
+        .experience-container ul li .spin::after {
+          content: "";
+          width: 361px;
+          height: 1px;
+          background: linear-gradient(75deg, #00c6a7, #1e4d92);
+          position: absolute;
+          top: 50%;
+          left: 9px; }
+          @media (max-width: 1350px) {
+            .education-container ul li .spin::after,
+            .experience-container ul li .spin::after {
+              width: 340px; } }
+          @media (max-width: 1290px) {
+            .education-container ul li .spin::after,
+            .experience-container ul li .spin::after {
+              width: 320px; } }
+          @media (max-width: 1240px) {
+            .education-container ul li .spin::after,
+            .experience-container ul li .spin::after {
+              width: 295px; } }
+          @media (max-width: 1100px) {
+            .education-container ul li .spin::after,
+            .experience-container ul li .spin::after {
+              width: 291px; } }
+          @media (max-width: 1065px) {
+            .education-container ul li .spin::after,
+            .experience-container ul li .spin::after {
+              width: 280px; } }
+          @media (max-width: 1023px) {
+            .education-container ul li .spin::after,
+            .experience-container ul li .spin::after {
+              width: 1px;
+              height: 105px;
+              top: 8px;
+              left: 2px; } }
+          @media (max-width: 767px) {
+            .education-container ul li .spin::after,
+            .experience-container ul li .spin::after {
+              height: 120px; } }
+          @media (max-width: 440px) {
+            .education-container ul li .spin::after,
+            .experience-container ul li .spin::after {
+              height: 135px; } }
+
+.education-container {
+  max-width: 1130px; }
+  @media (max-width: 1240px) {
+    .education-container {
+      max-width: 930px; } }
+  @media (max-width: 1023px) {
+    .education-container {
+      max-width: 660px; } }
+
+.experience-container {
+  margin: 0px auto 60px auto !important; }
+  .experience-container .experience-block {
+    display: flex;
+    margin: 0 auto;
+    width: 100%;
+    border-radius: 5px !important;
+    box-shadow: 2px 1px 4px 0px rgba(0, 0, 0, 0.2); }
+    @media (max-width: 767px) {
+      .experience-container .experience-block {
+        display: block;
+        margin-top: 25px; } }
+    .experience-container .experience-block .job-title {
+      max-width: 32%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      background-color: #1e4d92;
+      border-bottom-left-radius: 5px;
+      border-top-left-radius: 5px;
+      padding: 25px; }
+      @media (max-width: 1023px) {
+        .experience-container .experience-block .job-title {
+          max-width: 36%; } }
+      @media (max-width: 767px) {
+        .experience-container .experience-block .job-title {
+          max-width: 100%;
+          border-bottom-left-radius: 0;
+          border-top-right-radius: 5px;
+          padding: 27px 15px; } }
+      .experience-container .experience-block .job-title .experience-time,
+      .experience-container .experience-block .job-title .title {
+        font-family: "Montserrat";
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff; }
+        @media (max-width: 767px) {
+          .experience-container .experience-block .job-title .experience-time,
+          .experience-container .experience-block .job-title .title {
+            font-size: 14px; } }
+      .experience-container .experience-block .job-title .title {
+        font-size: 24px;
+        font-weight: 600;
+        padding-top: 7px; }
+        @media (max-width: 767px) {
+          .experience-container .experience-block .job-title .title {
+            font-size: 18px;
+            padding-top: 5px; } }
+    .experience-container .experience-block .job-description {
+      max-width: 75%;
+      width: 100%;
+      display: flex;
+      padding: 30px;
+      align-items: center; }
+      @media (max-width: 767px) {
+        .experience-container .experience-block .job-description {
+          max-width: 100%;
+          padding: 14px; } }
+      .experience-container .experience-block .job-description div {
+        font-family: "Montserrat";
+        font-size: 14px;
+        word-spacing: 1px;
+        line-height: 1.7; }
+
+footer {
+  position: relative;
+  height: 300px; }
+  @media (max-width: 1023px) {
+    footer {
+      height: 250px; } }
+  footer .contact-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    bottom: 0;
+    background: linear-gradient(57deg, #00c6a7, #1e4d92);
+    clip-path: polygon(100% 0%, 100% 0%, 100% 100%, -75% 100%); }
+    @media (max-width: 1023px) {
+      footer .contact-container {
+        clip-path: polygon(100% 0%, 100% 0%, 100% 100%, -75% 100%); } }
+
+.navigation-menu-icon-show {
+  display: none;
+  height: 18px; }
+  @media (max-width: 767px) {
+    .navigation-menu-icon-show {
+      display: block; } }
+  .navigation-menu-icon-show svg {
+    width: 21px;
+    fill: #fff;
+    z-index: 10 !important; }
+
+.mobile-navigation-menu-close {
+  display: none;
+  max-width: 0;
+  width: 0;
+  transition: width 0.4s ease-out;
+  transform: translateX(100%); }
+
+.mobile-navigation-menu-open {
+  display: none; }
+  @media (max-width: 767px) {
+    .mobile-navigation-menu-open {
+      display: block !important;
+      position: fixed;
+      max-width: 280px;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(57deg, #00c6a7, #1e4d92);
+      top: 0;
+      right: 0;
+      z-index: 10;
+      overflow: auto;
+      box-shadow: -13px 0 40px 0 rgba(0, 0, 0, 0.3);
+      transform: translateX(0%);
+      transition: 0.6s; } }
+  .mobile-navigation-menu-open .close-menu-icon {
+    display: flex;
+    justify-content: flex-end; }
+    @media (max-width: 767px) {
+      .mobile-navigation-menu-open .close-menu-icon {
+        padding: 19px; } }
+    .mobile-navigation-menu-open .close-menu-icon img {
+      width: 18px; }
+  .mobile-navigation-menu-open nav {
+    margin: 30px 60px;
+    display: flex;
+    justify-content: center; }
+  .mobile-navigation-menu-open .right-wrap {
+    display: block; }
+    .mobile-navigation-menu-open .right-wrap .nav-items {
+      display: block; }
+      .mobile-navigation-menu-open .right-wrap .nav-items .nav-link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0; }
+        .mobile-navigation-menu-open .right-wrap .nav-items .nav-link a {
+          text-align: center;
+          color: #fff;
+          margin: 10px; }
