@@ -751,6 +751,15 @@ footer {
     @media (max-width: 1023px) {
       footer .contact-container {
         clip-path: polygon(100% 0%, 100% 0%, 100% 100%, -75% 100%); } }
+    footer .contact-container .footer-icons {
+      display: flex;
+      justify-content: flex-end;
+      position: absolute;
+      bottom: 30px;
+      right: 30px; }
+      footer .contact-container .footer-icons a {
+        margin: 0px 0px 0px 20px;
+        text-decoration: none; }
 
 .navigation-menu-icon-show {
   display: none;

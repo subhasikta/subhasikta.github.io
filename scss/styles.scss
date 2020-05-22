@@ -725,6 +725,17 @@ footer {
     @include layout(1023) {
       clip-path: polygon(100% 0%, 100% 0%, 100% 100%, -75% 100%);
     }
+    .footer-icons {
+      display: flex;
+      justify-content: flex-end;
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      a {
+        margin: 0px 0px 0px 20px;
+        text-decoration: none;
+      }
+    }
   }
 }
 
@@ -762,7 +773,7 @@ footer {
     right: 0;
     z-index: 10;
     overflow: auto;
-    box-shadow: -13px 0 40px 0 rgba(0,0,0,.3);
+    box-shadow: -13px 0 40px 0 rgba(0, 0, 0, 0.3);
     transform: translateX(0%);
     transition: 0.6s;
     // animation: menu-anim-right 0.8s ease-in 1;
